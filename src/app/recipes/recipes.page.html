@@ -1,17 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Recipes </ion-title>
+    <ion-title>Recipes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item
-    [routerLink]="['/recipes', recipe.id]"
+  <app-recipe-item
     *ngFor="let recipe of recipes"
-  >
-    <ion-avatar slot="start">
-      <ion-img [src]="recipe.imageUrl"></ion-img>
-    </ion-avatar>
-    <ion-label>{{ recipe.title }}</ion-label>
-  </ion-item>
+    [recipe]="recipe"
+  ></app-recipe-item>
 </ion-content>
